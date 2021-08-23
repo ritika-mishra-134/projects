@@ -1,13 +1,14 @@
-word="calculate,dog,request"
-words=word.split(",")
-for i in words:
-    
-    guesses=''
-    print("guess the word")
-    turns=12
-    while turns>0:
-        failed=0
-        for char in i:
+import random
+words=["calculate,dog,request","computer","rest","software"]
+name=input("enter your name: ")
+print("let's play with words",name)
+word=words.random()
+guesses=''
+print("guess the word")
+turns=12
+while turns>0:
+    failed=0
+    for char in word:
             if char in guesses:
                 print(char)
             else:
@@ -17,7 +18,7 @@ for i in words:
             print("you win")
             print("the word is",i)
             break
-        guess=input("enter character")
+        guess=input("enter your guess")
         guesses+=guess
         if guess not in i:
             turns-=1
@@ -25,12 +26,5 @@ for i in words:
             print("you have",+ turns,"more guesses")
             if turns==0:
                print("you loose")
-        
-        
-#print(words)
-##vowels="a","e","i","o","u"
-##for i in word:
-##    if vowels in i:
-##        print(vowels)
-##    else:
-##        print("_")
+
+print("hope you enjoyed playing")
